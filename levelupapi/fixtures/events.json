@@ -1,0 +1,74 @@
+[
+    {
+        "model": "levelupapi.event",
+        "pk": 1,
+        "fields": {
+            "description": "Plumber Star Party",
+            "date": "2023-05-05",
+            "time": "20:00",
+            "organizer": 1,
+            "attendees": [],
+            "game": 2
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 2,
+        "fields": {
+            "description": "Spy Tryouts",
+            "date": "2023-05-23",
+            "time": "14:15",
+            "organizer": 1,
+            "attendees": [],
+            "game": 1
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 3,
+        "fields": {
+            "description": "Capitalist Rule",
+            "date": "2023-05-24",
+            "time": "18:20",
+            "organizer": 2,
+            "attendees": [],
+            "game": 7
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 4,
+        "fields": {
+            "description": "Art Auctions Aplenty",
+            "date": "2023-05-29",
+            "time": "8:45",
+            "organizer": 3,
+            "attendees": [],
+            "game": 11
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 5,
+        "fields": {
+            "description": "Trivia Night of Crime",
+            "date": "2023-06-01",
+            "time": "21:15",
+            "organizer": 2,
+            "attendees": [],
+            "game": 5
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 6,
+        "fields": {
+            "description": "This.is.WAR.",
+            "date": "2023-06-05",
+            "time": "12:00",
+            "organizer": 3,
+            "attendees": [],
+            "game": 6
+        }
+    }
+]

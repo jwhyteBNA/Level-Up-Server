@@ -1,0 +1,23 @@
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=levelup.settings"
+    ],
+    "cSpell.ignoreWords": [
+        "Codenames",
+        "authtoken",
+        "corsheaders",
+        "gametype",
+        "gametypes",
+        "levelup",
+        "levelupapi",
+        "viewsets",
+        "vihz"
+    ],
+    "cSpell.words": [
+        "Bidiots",
+        "Jackbox",
+        "Kanai",
+        "Quiplash"
+    ]
+}

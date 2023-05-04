@@ -1,0 +1,134 @@
+[
+    {
+        "model": "levelupapi.game",
+        "pk": 1,
+        "fields": {
+            "title": "Codenames",
+            "maker": "CGE",
+            "number_of_players": 8,
+            "skill_level": "Difficult",
+            "creator": 1,
+            "game_type": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 2,
+        "fields": {
+            "title": "Mario & Luigi: Superstar Saga",
+            "maker": "Nintendo",
+            "number_of_players": 2,
+            "skill_level": "Medium",
+            "creator": 1,
+            "game_type": 2
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 3,
+        "fields": {
+            "title": "Love Letter",
+            "maker": "Kanai",
+            "number_of_players": 4,
+            "skill_level": "Easy",
+            "creator": 3,
+            "game_type": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 4,
+        "fields": {
+            "title": "MarioKart",
+            "maker": "Nintendo",
+            "number_of_players": 6,
+            "skill_level": "Medium",
+            "creator": 2,
+            "game_type": 2
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 5,
+        "fields": {
+            "title": "Trivia Murder Party",
+            "maker": "Jackbox Games",
+            "number_of_players": 8,
+            "skill_level": "Medium",
+            "creator": 1,
+            "game_type": 2
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 6,
+        "fields": {
+            "title": "World Of Warcraft",
+            "maker": "Blizzard Entertainment",
+            "number_of_players": 1000,
+            "skill_level": "Difficult",
+            "creator": 2,
+            "game_type": 3
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 7,
+        "fields": {
+            "title": "Monopoly",
+            "maker": "Hasbro",
+            "number_of_players": 8,
+            "skill_level": "Medium",
+            "creator": 3,
+            "game_type": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 8,
+        "fields": {
+            "title": "Trouble",
+            "maker": "Hasbro",
+            "number_of_players": 4,
+            "skill_level": "Easy",
+            "creator": 1,
+            "game_type": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 9,
+        "fields": {
+            "title": "Sorry!",
+            "maker": "Milton Bradley",
+            "number_of_players": 2,
+            "skill_level": "Easy",
+            "creator": 3,
+            "game_type": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 10,
+        "fields": {
+            "title": "Quiplash",
+            "maker": "Jackbox Games",
+            "number_of_players": 8,
+            "skill_level": "Easy",
+            "creator": 1,
+            "game_type": 2
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 11,
+        "fields": {
+            "title": "Bidiots",
+            "maker": "Jackbox Games",
+            "number_of_players": 6,
+            "skill_level": "Medium",
+            "creator": 3,
+            "game_type": 2
+        }
+    }
+]
