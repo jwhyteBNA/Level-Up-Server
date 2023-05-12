@@ -6,5 +6,21 @@
             "user": 1,
             "bio": "Me"
         }
+    },
+        {
+        "model": "levelupapi.gamer",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "bio": "Me want games"
+        }
+    },
+        {
+        "model": "levelupapi.gamer",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "bio": "Rocco's the name, burping's my game. But also, other games."
+        }
     }
 ]

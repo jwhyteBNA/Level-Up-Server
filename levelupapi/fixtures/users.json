@@ -16,5 +16,59 @@
             "groups": [],
             "user_permissions": []
         }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$LJHqtCdM5CC1wI67H37AlF$KUSqzlUOBdabXnASjvxuZONFQJDZgAKcacTjfyYW7nc=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "waffles666",
+            "first_name": "Waffles",
+            "last_name": "Whyte",
+            "email": "waffles@whyte.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$QQSmGafZGEEMjFtgVxno73$t8Pjc/o9FmROn8E2y5j/AD3HZ/Gdn5u9W2CmcqWrnLQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "roccolikegaming",
+            "first_name": "Rocco",
+            "last_name": "Whyte",
+            "email": "rocco@whyte.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$xo42TDsBOpdpZ1N1OI2HH3$0G5txurEOUNhq4ue/BAcSmPLY8GGvyWwQKaWwDO7mSM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "itsmeMari",
+            "first_name": "Omari",
+            "last_name": "Whyte",
+            "email": "omari@whyte.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
     }
 ]
