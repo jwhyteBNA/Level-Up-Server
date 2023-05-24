@@ -38,6 +38,7 @@ class Migration(migrations.Migration):
                 ('number_of_players', models.IntegerField(default=1)),
                 ('skill_level', models.CharField(max_length=50)),
                 ('game_type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='games', to='levelupapi.gametype')),
+                ('creator', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='created_games', to='levelupapi.gamer')),
             ],
         ),
         migrations.CreateModel(

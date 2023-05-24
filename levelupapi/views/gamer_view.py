@@ -39,5 +39,5 @@ class GamerSerializer(serializers.ModelSerializer):
     """JSON serializer for Gamers"""
     class Meta:
         model = Gamer
-        fields = ('id', 'user', 'bio', 'events_attended' )
+        fields = ('id', 'user', 'bio', 'events_attended', 'created_games' )
         depth = 1

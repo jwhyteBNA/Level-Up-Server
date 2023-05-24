@@ -63,12 +63,21 @@ class EventView(ViewSet):
             Response -- JSON serialized event instance
         """
         gamer = Gamer.objects.get(user=request.auth.user)
-        # game = Game.objects.get(pk=request.data["game"])
+        game = Game.objects.get(pk=request.data["game"])
 
         serializer = CreateEventSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save(organizer=gamer)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        if serializer.is_valid():
+            event = serializer.save()
+            event_serializer = EventSerializer(event)
+            serializer.save(organizer=gamer, game=game)
+            return Response(event_serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # serializer = CreateEventSerializer(data=request.data)
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save(organizer=gamer, game=game)
+        # return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         # event = Event.objects.create(
         #     description=request.data["description"],
@@ -101,7 +110,7 @@ class EventView(ViewSet):
         event.save()
 
         serializer = EventSerializer(event)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):
         """To Delete an event"""
@@ -132,7 +141,7 @@ class CreateEventSerializer(serializers.ModelSerializer):
     """JSON serializer for creating new Event"""
     class Meta:
         model = Event
-        fields = ('id', 'description', 'date', 'time', 'game',)
+        fields = ('id', 'description', 'date', 'time', 'game', 'organizer',)
 
 class EventSerializer(serializers.ModelSerializer):
     attendees_count = serializers.IntegerField(default=None)

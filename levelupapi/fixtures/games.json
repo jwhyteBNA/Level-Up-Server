@@ -7,7 +7,8 @@
             "maker": "CGE",
             "number_of_players": 8,
             "skill_level": "Difficult",
-            "game_type": 1
+            "game_type": 1,
+            "creator": 1
         }
     },
     {
@@ -18,7 +19,8 @@
             "maker": "Nintendo",
             "number_of_players": 2,
             "skill_level": "Medium",
-            "game_type": 2
+            "game_type": 2,
+            "creator": 1
         }
     },
     {
@@ -29,7 +31,8 @@
             "maker": "Kanai",
             "number_of_players": 4,
             "skill_level": "Easy",
-            "game_type": 1
+            "game_type": 1,
+            "creator": 1
         }
     },
     {
@@ -40,7 +43,8 @@
             "maker": "Nintendo",
             "number_of_players": 6,
             "skill_level": "Medium",
-            "game_type": 2
+            "game_type": 2,
+            "creator": 1
         }
     },
     {
@@ -51,7 +55,8 @@
             "maker": "Jackbox Games",
             "number_of_players": 8,
             "skill_level": "Medium",
-            "game_type": 2
+            "game_type": 2,
+            "creator": 1
         }
     },
     {
@@ -62,7 +67,8 @@
             "maker": "Blizzard Entertainment",
             "number_of_players": 1000,
             "skill_level": "Difficult",
-            "game_type": 3
+            "game_type": 3,
+            "creator": 1
         }
     },
     {
@@ -73,7 +79,8 @@
             "maker": "Hasbro",
             "number_of_players": 8,
             "skill_level": "Medium",
-            "game_type": 1
+            "game_type": 1,
+            "creator": 1
         }
     },
     {
@@ -84,7 +91,8 @@
             "maker": "Hasbro",
             "number_of_players": 4,
             "skill_level": "Easy",
-            "game_type": 1
+            "game_type": 1,
+            "creator": 1
         }
     },
     {
@@ -95,7 +103,8 @@
             "maker": "Milton Bradley",
             "number_of_players": 2,
             "skill_level": "Easy",
-            "game_type": 1
+            "game_type": 1,
+            "creator": 1
         }
     },
     {
@@ -106,7 +115,8 @@
             "maker": "Jackbox Games",
             "number_of_players": 8,
             "skill_level": "Easy",
-            "game_type": 2
+            "game_type": 2,
+            "creator": 1
         }
     },
     {
@@ -117,7 +127,8 @@
             "maker": "Jackbox Games",
             "number_of_players": 6,
             "skill_level": "Medium",
-            "game_type": 2
+            "game_type": 2,
+            "creator": 1
         }
     }
 ]

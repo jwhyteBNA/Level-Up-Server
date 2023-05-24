@@ -4,8 +4,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from django.core.exceptions import ValidationError
-from django.db.models import Q
-from django.db.models import Count
+from django.db.models import Q, Count
 from levelupapi.models import Game, Gamer, GameType
 
 
@@ -39,7 +38,7 @@ class GameView(ViewSet):
         # games = Game.objects.all()
         games = Game.objects.annotate(
             event_count=Count('events'),            user_event_count=Count('events', filter=Q(events__organizer=gamer)
-                                                                           ))
+        ))
 
         game_type = request.query_params.get('type', None)
         if game_type is not None:
@@ -98,6 +97,9 @@ class GameView(ViewSet):
 
         game_type = GameType.objects.get(pk=request.data["game_type"])
         game.game_type = game_type
+
+        creator = Gamer.objects.get(pk=request.data["creator"])
+        game.creator = creator
         game.save()
 
         serializer = GameSerializer(game)
@@ -115,7 +117,7 @@ class CreateGameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ['id', 'title', 'maker',
-                  'number_of_players', 'skill_level', 'game_type']
+                  'number_of_players', 'skill_level', 'game_type', 'creator']
 
 
 class GameSerializer(serializers.ModelSerializer):
@@ -126,4 +128,4 @@ class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level',
-                  'game_type', 'event_count', 'user_event_count')
+                  'game_type', 'creator', 'event_count', 'user_event_count')

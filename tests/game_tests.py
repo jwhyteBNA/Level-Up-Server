@@ -30,7 +30,8 @@ class GameTests(APITestCase):
             "skill_level": "Difficult",
             "title": "Clue",
             "maker": "Milton Bradley",
-            "number_of_players": 6
+            "number_of_players": 6,
+            "creator": 1
         }
 
         # Initiate request and store response
@@ -48,6 +49,7 @@ class GameTests(APITestCase):
         self.assertEqual(json_response["skill_level"], "Difficult")
         self.assertEqual(json_response["number_of_players"], 6)
         self.assertEqual(json_response["game_type"], 1)
+        self.assertEqual(json_response["creator"], 1)
 
     def test_get_game(self):
         """
@@ -61,6 +63,7 @@ class GameTests(APITestCase):
         game.title = "Monopoly"
         game.maker = "Milton Bradley"
         game.number_of_players = 4
+        game.creator = Gamer.objects.first()
 
         game.save()
 
@@ -79,6 +82,7 @@ class GameTests(APITestCase):
         self.assertEqual(json_response["skill_level"], "Difficult")
         self.assertEqual(json_response["number_of_players"], 4)
         self.assertEqual(json_response["game_type"], 1)
+        self.assertEqual(json_response["creator"], 1)
 
     def test_change_game(self):
         """
@@ -90,6 +94,7 @@ class GameTests(APITestCase):
         game.title = "Sorry"
         game.maker = "Milton Bradley"
         game.number_of_players = 4
+        game.creator = Gamer.objects.first()
         game.save()
 
         # DEFINE NEW PROPERTIES FOR GAME
@@ -98,7 +103,8 @@ class GameTests(APITestCase):
             "skill_level": "Difficult",
             "title": "Sorry",
             "maker": "Hasbro",
-            "number_of_players": 4
+            "number_of_players": 4,
+            "creator": 1
         }
 
         response = self.client.put(f"/games/{game.id}", data, format="json")
@@ -115,6 +121,7 @@ class GameTests(APITestCase):
         self.assertEqual(json_response["skill_level"], "Difficult")
         self.assertEqual(json_response["number_of_players"], 4)
         self.assertEqual(json_response["game_type"], 1)
+        self.assertEqual(json_response["creator"], 1)
 
     def test_delete_game(self):
         """
@@ -126,6 +133,7 @@ class GameTests(APITestCase):
         game.title = "Sorry"
         game.maker = "Milton Bradley"
         game.number_of_players = 4
+        game.creator = Gamer.objects.first()
         game.save()
 
         # DELETE the game you just created

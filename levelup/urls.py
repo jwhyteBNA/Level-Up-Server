@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.conf.urls import include
-from rest_framework import routers
 from django.urls import path
+from rest_framework import routers
 from levelupapi.views import GameTypeView, GameView, EventView, GamerView
 from levelupapi.views import register_user, login_user
 
@@ -16,4 +16,5 @@ urlpatterns = [
     path('login', login_user),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('', include('levelupreports.urls')),
 ]
