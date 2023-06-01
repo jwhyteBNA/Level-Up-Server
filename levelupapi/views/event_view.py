@@ -109,8 +109,7 @@ class EventView(ViewSet):
         event.organizer = gamer
         event.save()
 
-        serializer = EventSerializer(event)
-        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):
         """To Delete an event"""

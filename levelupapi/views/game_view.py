@@ -1,15 +1,17 @@
 """View module for handling requests about game types"""
 # from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
+# from rest_framework.permissions import DjangoModelPermissions
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from django.core.exceptions import ValidationError
 from django.db.models import Q, Count
 from levelupapi.models import Game, Gamer, GameType
 
-
 class GameView(ViewSet):
     """Level up game types view"""
+    # permission_classes = [ DjangoModelPermissions ]
+    # queryset = Game.objects.none()
 
     def retrieve(self, request, pk):
         """Handle GET requests for single game

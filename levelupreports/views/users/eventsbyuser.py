@@ -13,20 +13,17 @@ class UserEventList(View):
             # Query to get all games along with the gamer first name, last name, and id
             db_cursor.execute("""
             SELECT
-                gr.id AS gamer_id,
-                u.first_name || ' ' || u.last_name AS full_name,
-                g.title AS game,
-                e.*
-            FROM levelupapi_event e
-            JOIN levelupapi_event_attendees ea 
-                ON ea.event_id = e.id
-            JOIN levelupapi_gamer gr
-                ON ea.gamer_id = gr.id
-            JOIN auth_user u
-                ON gr.user_id = u.id
-            JOIN levelupapi_game g 
-                ON e.game_id = g.id
-            ORDER BY gamer_id
+                gamer_id,
+                full_name,
+                game,
+                id,
+                description,
+                date,
+                time,
+                game_id,
+                organizer_id
+            FROM 
+                EVENTS_BY_USER
             """)
             # Pass db_cursor to dict_fetch_all function to turn fetch_all() response into dictionary
             dataset = dict_fetch_all(db_cursor)

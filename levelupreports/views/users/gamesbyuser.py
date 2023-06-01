@@ -5,6 +5,7 @@ from django.views import View
 
 from levelupreports.views.helpers import dict_fetch_all
 
+
 class UserGameList(View):
     def get(self, request):
         """Django reports"""
@@ -13,14 +14,16 @@ class UserGameList(View):
             # Query to get all games along with the gamer first name, last name, and id
             db_cursor.execute("""
             SELECT
-                gr.id AS gamer_id,
-                u.first_name || ' ' || u.last_name AS full_name,
-                g.*
-            FROM levelupapi_game g
-            JOIN levelupapi_gamer gr
-                ON g.creator_id = gr.id
-            JOIN auth_user u
-                ON gr.user_id = u.id
+                id,
+                title,
+                maker,
+                game_type_id,
+                number_of_players,
+                skill_level,
+                user_id,
+                full_name
+            FROM
+                GAMES_BY_USER
             """)
             # Pass db_cursor to dict_fetch_all function to turn fetch_all() response into dictionary
             dataset = dict_fetch_all(db_cursor)
@@ -58,7 +61,6 @@ class UserGameList(View):
 
             for row in dataset:
 
-
                 # Create a dictionary called game that includes
                 # the name, description, number_of_players, maker,
                 # game_type_id, and skill_level from the row dictionary
@@ -73,7 +75,7 @@ class UserGameList(View):
                 # See if the gamer has been added to the games_by_user list already
                 user_dict = None
                 for user_game in games_by_user:
-                    if user_game['creator_id'] == row['creator_id']:
+                    if user_game['user_id'] == row['user_id']:
                         user_dict = user_game
 
                 if user_dict:
@@ -82,7 +84,7 @@ class UserGameList(View):
                 else:
                     # If user is not on the games_by_user list, create + add user to list
                     games_by_user.append({
-                        "creator_id": row['creator_id'],
+                        "user_id": row['user_id'],
                         "full_name": row['full_name'],
                         "games": [game]
                     })
